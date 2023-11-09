@@ -14,6 +14,23 @@
 // 3. painting
 // Total hobbies: 3
 
+const hobbies = ["Travel", "Flying", "Eating", "Cooking", "Fitness"];
+
+// Loop 1
+for (let i = 0; i < hobbies.length; i++) {
+    console.log(hobbies[i]);
+}
+console.log(hobbies.length);
+
+
+// Loop 2
+for (let hobby of hobbies) {
+    console.log(hobby);
+}
+console.log(hobbies.length);
+
+
+
 /**
  * #2 Colors
  * ---------
@@ -30,6 +47,16 @@
 // green, red, teal, orange, teal
 // Teal was found 2 times
 
+const colors = ["Blie", "Red", "Teal", "Green"];
+let tealCount = 0;
+
+for (let i = 0; i < colors.length; i++) {
+    if (colors[i] === "Teal") {
+        tealCount++;
+    }
+}
+console.log(colors);
+console.log(`Teal was found ${tealCount} times`);
 
 /**
  * #3 Even & Odd
@@ -47,6 +74,24 @@
 // Odd 3, 7, 11
 // Even 2, 8, 4, 2
 
+const numbers = [5,2,7,9,10];
+const oddNumbers = [];
+const evenNumbers = [];
+
+for (let number of numbers) {
+    if (number % 2 === 0) {
+        evenNumbers.push(number);
+    }else {
+        oddNumbers.push(number);
+    }
+}
+console.log(`Original Array: ${numbers}`);
+console.log(`Even Array: ${evenNumbers}`);
+console.log(`Odd Array: ${oddNumbers}`);
+
+
+
+
 
 /**
  * #4 Flipping Switches
@@ -62,6 +107,15 @@
 // true, false, true, true
 // Toggled false, true, false, false
 
+const values = [true, false, true, false, false];
+const toggled = [];
+
+for (let opposite of values) {
+    toggled.push(!opposite);
+}
+
+console.log('Original array:', values);
+console.log('Toggled array:', toggled);
 
 /**
  * #5 (STRETCH) Remove 0's
@@ -80,6 +134,14 @@
 // Before loop 3, 0, 2, 8, 0, 0, 0
 // After loop 3, 0, 2, 8
 
+const numbers2 = [3, 0, 2, 8, 0, 0, 0];
+console.log("Before Loop: ", numbers2);
+
+while (numbers2[numbers2.length - 1] === 0) {
+    numbers2.pop();
+}
+
+console.log("After Loop: ", numbers2);
 
 /**
  * #6 (STRETCH) Highest & Lowest
@@ -96,3 +158,18 @@
 // 2, 2, -3, 7, 4, 1, 7, 12, 8
 // High: 12
 // Low: -3
+
+const numbers3 = [2, 2, 7, 4, 1, 7, 12, 8];
+let low = numbers3[0];
+let high = numbers3[0];
+
+for (let index of numbers3) {
+    
+    if (index > high) {
+        high = index;
+    } else if (index < low){
+        low = index;
+    }
+}
+console.log("Lowest Number Found: ", low);
+console.log("Highest Number Found: ", high);
