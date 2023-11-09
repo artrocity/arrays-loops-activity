@@ -164,7 +164,6 @@ let low = numbers3[0];
 let high = numbers3[0];
 
 for (let index of numbers3) {
-    
     if (index > high) {
         high = index;
     } else if (index < low){
